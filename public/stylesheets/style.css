@@ -1,8 +1,40 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: rgba(0,0,0,0.8);
 }
 
 a {
   color: #00B7FF;
+}
+
+.container {
+  width: 860px;
+  margin: 0 auto;
+}
+
+.email-list {
+}
+
+.email-list a {
+  color: rgba(0,0,0,0.8);
+  text-decoration: none;
+}
+
+.email-list .item {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.email-list .item .title {
+  margin-bottom: 4px;
+}
+
+.email-list .item .sender {
+  font-size: .8em;
+  color: rgba(0,0,0,0.4);
 }

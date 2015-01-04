@@ -1,11 +1,12 @@
 extends layout
 
 block content
-  h2 Letters:
-  ul
-    each letter in letters
-      li(class=letter.unread ? "unread" : "read")
-        h3= letter.subject
-        em= letter.from
-        p= letter.snippet
+  div.container
+    div.email-list
+      each letter in letters
+        div(class=letter.unread ? "unread" : "read").item
+          a(href="#")
+            h2.title= letter.subject
+            em.sender= letter.from
+            p.snippet= letter.snippet
 
