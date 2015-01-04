@@ -1,5 +1,11 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h2 Letters:
+  ul
+    each letter in letters
+      li(class=letter.unread ? "unread" : "read")
+        h3= letter.subject
+        em= letter.from
+        p= letter.snippet
+
