@@ -5,9 +5,9 @@ var authorize = require('../lib/auth').authorize;
 
 /* GET home page. */
 router.get('/', authorize, function(req, res) {
-  gmail.getNewsletters(function (err, result) {
+  gmail.getNewsletters(req.session.user, function (err, result) {
     if (err) {
-      res.send(500, err);
+      return res.send(500, err);
     }
     res.render('index', { letters: result });
   });
