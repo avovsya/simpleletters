@@ -38,3 +38,17 @@ a {
   font-size: .8em;
   color: rgba(0,0,0,0.4);
 }
+
+.top-panel {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  border: 1px solid #eee;
+}
+
+.content {
+  padding-top: 50px;
+}

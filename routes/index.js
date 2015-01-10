@@ -15,6 +15,7 @@ router.get('/auth', auth.googleAuthView);
 router.get('/api/auth/callback', auth.googleAuthCallback);
 
 router.get('/list', authorize, list.emailListView);
+router.get('/list/import', authorize, list.importAllEmails);
 
 router.get('/mail/:mailId', authorize, mail.getMailView);
 

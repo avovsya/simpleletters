@@ -5,6 +5,6 @@ exports.getMailView = function getMailView(req, res) {
     if (err) {
       res.send(500, err);
     }
-    res.send(result);
+    res.render('mail', { email: result });
   });
 };
