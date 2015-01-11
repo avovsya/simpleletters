@@ -1,7 +1,9 @@
 extends layout
 
 block topPanel
-  <a href="/list"> &lt; Back </a>
+  a(href="/list") &lt; Back
+  br
+  a(href="/mail/#{id}/markread") Mark As Read
 
 block content
-  !{email}
+  div !{body}

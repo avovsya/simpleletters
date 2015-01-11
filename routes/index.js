@@ -18,5 +18,6 @@ router.get('/list', authorize, list.emailListView);
 router.get('/list/import', authorize, list.importAllEmails);
 
 router.get('/mail/:mailId', authorize, mail.getMailView);
+router.get('/mail/:mailId/markread', authorize, mail.markAsRead);
 
 module.exports = router;
