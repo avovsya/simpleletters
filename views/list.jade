@@ -7,7 +7,7 @@ block content
     div.email-list
       each email in letters
         div(class=email.unread ? "unread" : "read").item
-          a(href="/mail/#{email.id}")
+          a(href="/mail/#{email._id}")
             h2.title= email.subject
             em.sender= email.from
             p.snippet= email.snippet
