@@ -45,13 +45,14 @@ a {
 }
 
 .top-panel {
+  opacity: 0.99;
   position: fixed;
   top: 0px;
   left: 0px;
   width: 100%;
   height: 50px;
   background-color: white;
-  border-bottom: 1px solid #777;
+  border-bottom: 1px solid #eee;
   padding: 7px;
 }
 
