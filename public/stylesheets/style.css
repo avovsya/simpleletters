@@ -8,14 +8,10 @@ a {
   color: #00B7FF;
 }
 
-.container {
-  width: 860px;
-  margin: 0 auto;
-}
-
 .email-list {
 }
 
+.email-list a:hover,
 .email-list a {
   color: rgba(0,0,0,0.8);
   text-decoration: none;
