@@ -1,9 +1,11 @@
 extends layout
 
 block topPanel
-  a(href="/list") &lt; Back
-  br
-  a(href="/mail/#{id}/markread") Mark As Read
+  a(href="/list").round-button.left
+    span.glyphicon.glyphicon-chevron-left
+  span.logo SIMPLE LETTERS
+  a(href="/mail/#{id}/markread").round-button.right
+    span.glyphicon.glyphicon-ok
 
 block content
-  div !{body}
+  div.container !{body}

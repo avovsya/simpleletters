@@ -1,7 +1,9 @@
 extends layout
 
 block topPanel
-  a(href="/list/import?type=recent") Refresh emails
+  a(href="/list/import?type=recent").round-button
+    span.glyphicon.glyphicon-refresh
+  span.logo SIMPLE LETTERS
 block content
   div.container
     div.email-list
@@ -9,6 +11,6 @@ block content
         div(class=email.unread ? "unread" : "read").item
           a(href="/mail/#{email._id}")
             h2.title= email.subject
-            em.sender= email.from
+            //- em.sender= email.from
             p.snippet= email.snippet
 

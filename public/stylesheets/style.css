@@ -1,7 +1,12 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+  font: 14px Georgia !important;
   color: rgba(0,0,0,0.8);
+}
+
+.container {
+  max-width: 960px;
 }
 
 a {
@@ -30,6 +35,10 @@ a {
   margin-bottom: 4px;
 }
 
+.email-list .item .snippet {
+  font-size: 18px;
+}
+
 .email-list .item .sender {
   font-size: .8em;
   color: rgba(0,0,0,0.4);
@@ -42,9 +51,54 @@ a {
   width: 100%;
   height: 50px;
   background-color: white;
-  border: 1px solid #eee;
+  border-bottom: 1px solid #777;
+  padding: 7px;
 }
 
 .content {
   padding-top: 50px;
+}
+
+.round-button {
+  display: block;
+  border: 3px solid #bbb;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+}
+
+.round-button span {
+  display: block;
+  color: #444;
+  width: 100%;
+  height: 100%;
+  padding-top: 100%;
+  padding-bottom: 100%;
+  font-size: 18px;
+  text-align: center;
+  padding-top: 4px;
+}
+
+.round-button:hover {
+  text-decoration: none;
+  color: #777;
+  border-color: #777;
+}
+
+.round-button.left {
+  float: left;
+}
+
+.round-button.right {
+  float: right;
+}
+
+.logo {
+  font-family: Georgia;
+  font-size: 23px;
+  position: fixed;
+  color: #444;
+  left: 50%;
+  top: 25px;
+  transform: translate(-50%, -50%);
 }
