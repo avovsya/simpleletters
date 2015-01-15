@@ -1,9 +1,11 @@
 extends layout
 
 block topPanel
-  a(href="/list/import?type=recent").round-button
+  a(href="/list/import?type=recent").round-button.left
     span.glyphicon.glyphicon-refresh
   span.logo SIMPLE LETTERS
+  a(href="/logout").round-button.right
+    span.glyphicon.glyphicon-log-out
 block content
   div.container
     div.email-list

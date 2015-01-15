@@ -35,3 +35,9 @@ exports.googleAuthCallback = function googleAuthCallback(req, res) {
     });
   });
 };
+
+exports.logout = function logout(req, res) {
+  req.session.destroy(function () {
+    res.redirect('/');
+  });
+};

@@ -18,6 +18,7 @@ router.get('/', function(req, res) {
 
 //router.get('/auth', auth.googleAuthView);
 router.get('/api/auth/callback', auth.googleAuthCallback);
+router.get('/logout', auth.logout);
 
 router.get('/list', authorize, list.emailListView);
 router.get('/list/import', authorize, list.importAllEmails);
