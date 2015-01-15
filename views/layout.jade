@@ -1,12 +1,7 @@
-doctype html
-html
-  head
-    title Simple Letters
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.css')
-  body
-    div.top-panel
-      div.container
-        block topPanel
-    div.content
-      block content
+extends basic-layout
+block layout
+  div.top-panel
+    div.container
+      block topPanel
+  div.content
+    block content

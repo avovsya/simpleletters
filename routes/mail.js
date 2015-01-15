@@ -5,7 +5,7 @@ exports.getMailView = function getMailView(req, res) {
     if (err) {
       res.send(500, err);
     }
-    res.render('mail', { body: result, id: req.params.mailId });
+    res.render('mail', { body: result, id: req.params.mailId, pos: req.query.pos });
   });
 };
 

@@ -7,11 +7,16 @@ var list = require('./list');
 var auth = require('./auth');
 var mail = require('./mail');
 
-router.get('/', authorize, function(req, res) {
-  return res.redirect('/list');
+router.get('/', function(req, res) {
+  if (req.session.user) {
+    return res.redirect('/list');
+  }
+  res.render('index', {
+    authUrl: gmailLib.authUrl
+  });
 });
 
-router.get('/auth', auth.googleAuthView);
+//router.get('/auth', auth.googleAuthView);
 router.get('/api/auth/callback', auth.googleAuthCallback);
 
 router.get('/list', authorize, list.emailListView);

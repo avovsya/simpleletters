@@ -1,7 +1,7 @@
 extends layout
 
 block topPanel
-  a(href="/list").round-button.left
+  a(href="/list##{pos}").round-button.left
     span.glyphicon.glyphicon-chevron-left
   span.logo SIMPLE LETTERS
   a(href="/mail/#{id}/markread").round-button.right

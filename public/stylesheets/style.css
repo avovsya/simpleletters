@@ -13,10 +13,52 @@ a {
   color: #00B7FF;
 }
 
+/* INDEX PAGE */
+.main-page-logo {
+  font-size: 58px;
+
+}
+
+.main-logo-container {
+  text-align: center;
+}
+
+.signin-button-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.signin-button {
+  display: inline-block;
+  background: #dd4b39;
+  color: white;
+  width: 180px;
+  height: 35px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.signin-button:hover,
+.signin-button:focus {
+  background: #e74b37;
+  color: white;
+  text-decoration: none;
+}
+
+.signin-button .button-text {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 7px;
+}
+/* ---------- */
+
 .email-list {
 }
 
 .email-list a:hover,
+.email-list a:focus,
 .email-list a {
   color: rgba(0,0,0,0.8);
   text-decoration: none;
@@ -37,6 +79,7 @@ a {
 
 .email-list .item .snippet {
   font-size: 18px;
+  padding-top: 15px;
 }
 
 .email-list .item .sender {
@@ -62,8 +105,8 @@ a {
 
 .round-button {
   display: block;
-  border: 3px solid #bbb;
-  border-radius: 50%;
+  /*border: 3px solid #bbb;*/
+  /*border-radius: 50%;*/
   width: 34px;
   height: 34px;
 }
@@ -77,10 +120,10 @@ a {
   padding-bottom: 100%;
   font-size: 18px;
   text-align: center;
-  padding-top: 4px;
+  padding-top: 8px;
 }
 
-.round-button:hover {
+.round-button:hover, .round-button:focus {
   text-decoration: none;
   color: #777;
   border-color: #777;

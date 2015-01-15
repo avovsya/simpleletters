@@ -8,9 +8,11 @@ block content
   div.container
     div.email-list
       each email in letters
-        div(class=email.unread ? "unread" : "read").item
-          a(href="/mail/#{email._id}")
+        div(class=email.unread ? "unread" : "read", id=email._id).item
+          - var anchorId = prevEmail ? prevEmail._id : ""
+          a(href="/mail/#{email._id}?pos=#{anchorId}")
             h2.title= email.subject
             //- em.sender= email.from
             p.snippet= email.snippet
+            - var prevEmail = email
 
