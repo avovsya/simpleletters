@@ -111,6 +111,7 @@ a {
 }
 
 .top-panel {
+  z-index: 1;
   opacity: 0.99;
   position: fixed;
   top: 0px;
