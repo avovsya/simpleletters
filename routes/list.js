@@ -24,13 +24,13 @@ exports.emailListView = function emailListView(req, res) {
 };
 
 exports.importAllEmails = function importAllEmails(req, res) {
-  // Only for new user
-  // TODO: guard this from returning user
-  // TODO: update user's lastUpdated field
   var lastUpdated;
   if (req.query.type === 'recent') {
     lastUpdated = req.session.user.lastUpdated;
+  } else if (req.session.user.lastUpdated) {
+    return res.redirect('/');
   }
+
   mail.refreshEmails(req.session.user, lastUpdated, function (err) {
     if (err) {
       return res.send(500, err);

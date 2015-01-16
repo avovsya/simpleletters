@@ -23,7 +23,7 @@ exports.googleAuthCallback = function googleAuthCallback(req, res) {
         req.session.user = user;
         return res.redirect('/');
       } else {
-        userData.lastUpdated = new Date().getTime();
+        //userData.lastUpdated = new Date().getTime();
         store.createUser(userData, function (err, result) {
           if (err) {
             return res.send(500, err);
