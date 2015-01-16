@@ -5,12 +5,17 @@ exports.getMailView = function getMailView(req, res) {
     if (err) {
       res.send(500, err);
     }
-    res.render('mail', {
-      title: result.subject + ' - ' + 'Simple Letters',
-      body: result.body,
-      subject: result.subject,
-      id: req.params.mailId,
-      pos: req.query.pos
+    mail.markAsSeen(req.params.mailId, function (err) {
+      if (err) {
+        res.send(500, err);
+      }
+      res.render('mail', {
+        title: result.subject + ' - ' + 'Simple Letters',
+        body: result.body,
+        subject: result.subject,
+        id: req.params.mailId,
+        pos: req.query.pos
+      });
     });
   });
 };

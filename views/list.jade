@@ -18,7 +18,8 @@ block content
           - var anchorId = prevEmail ? prevEmail._id : ""
           a(href="/mail/#{email._id}?pos=#{anchorId}")
             h2.title= email.subject
-              span.glyphicon.glyphicon-eye-open.seen(title="Mail already seen")
+              if email.seen
+                span.glyphicon.glyphicon-eye-open.seen(title="Mail already seen")
             //- em.sender= email.from
             p.snippet= email.snippet
             - var prevEmail = email
