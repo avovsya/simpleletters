@@ -1,11 +1,16 @@
 extends layout
 
 block topPanel
-  a(href="/list##{pos}").round-button.left
-    span.glyphicon.glyphicon-chevron-left
-  span.logo SIMPLE LETTERS
-  a(href="/mail/#{id}/markread").round-button.right
-    span.glyphicon.glyphicon-ok
+  div.row
+    div.col-xs-1.button-container-left
+      a(href="/list##{pos}").round-button
+        span.glyphicon.glyphicon-chevron-left
+    div.col-xs-10
+      div.logo.subject
+        span= subject
+    div.col-xs-1.button-container-right
+      a(href="/mail/#{id}/markread").round-button
+        span.glyphicon.glyphicon-ok
 
 block content
   div.container !{body}

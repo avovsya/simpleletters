@@ -1,11 +1,15 @@
 extends layout
 
 block topPanel
-  a(href="/list/import?type=recent").round-button.left
-    span.glyphicon.glyphicon-refresh
-  span.logo SIMPLE LETTERS
-  a(href="/logout").round-button.right
-    span.glyphicon.glyphicon-log-out
+  div.row
+    div.col-xs-1.button-container-left
+      a(href="/list/import?type=recent").round-button
+        span.glyphicon.glyphicon-refresh
+    div.col-xs-10
+      div.logo SiMPLE LETTERS
+    div.col-xs-1.button-container-right
+      a(href="/logout").round-button
+        span.glyphicon.glyphicon-log-out
 block content
   div.container
     div.email-list
@@ -17,4 +21,6 @@ block content
             //- em.sender= email.from
             p.snippet= email.snippet
             - var prevEmail = email
+  //-    div.row
+  //-      div.col-xs-12
 
