@@ -87,6 +87,13 @@ a {
   color: rgba(0,0,0,0.4);
 }
 
+.email-list .item .seen {
+  color: #999;
+  font-size: 23px;
+  top: 4px;
+  left: 9px;
+}
+
 .top-panel {
   opacity: 0.99;
   position: fixed;

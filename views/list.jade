@@ -3,12 +3,12 @@ extends layout
 block topPanel
   div.row
     div.col-xs-1.button-container-left
-      a(href="/list/import?type=recent").round-button
+      a(href="/list/import?type=recent").round-button(title="Refresh")
         span.glyphicon.glyphicon-refresh
     div.col-xs-10
       div.logo SiMPLE LETTERS
     div.col-xs-1.button-container-right
-      a(href="/logout").round-button
+      a(href="/logout").round-button(title="Log out")
         span.glyphicon.glyphicon-log-out
 block content
   div.container
@@ -18,6 +18,7 @@ block content
           - var anchorId = prevEmail ? prevEmail._id : ""
           a(href="/mail/#{email._id}?pos=#{anchorId}")
             h2.title= email.subject
+              span.glyphicon.glyphicon-eye-open.seen(title="Mail already seen")
             //- em.sender= email.from
             p.snippet= email.snippet
             - var prevEmail = email

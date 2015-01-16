@@ -2,13 +2,13 @@ extends layout
 
 block topPanel
   div.row
-    div.col-xs-1.button-container-left
+    div.col-xs-1.button-container-left(title="Back to list")
       a(href="/list##{pos}").round-button
         span.glyphicon.glyphicon-chevron-left
     div.col-xs-10
       div.logo.subject
         span= subject
-    div.col-xs-1.button-container-right
+    div.col-xs-1.button-container-right(title="Mark as read")
       a(href="/mail/#{id}/markread").round-button
         span.glyphicon.glyphicon-ok
 
