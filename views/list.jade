@@ -25,6 +25,7 @@ block content
             h2.title= email.subject
               if email.seen
                 span.glyphicon.glyphicon-eye-open.seen(title="Mail already seen")
-            p.snippet= email.snippet
+            p.snippet !{email.snippet}
+        div.tsc_divider8_black
             - var prevEmail = email
 

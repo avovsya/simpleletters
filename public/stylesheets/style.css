@@ -69,28 +69,33 @@ a {
 }
 
 .email-list .item {
-  margin-top: 10px;
-  margin-bottom: 10px;
   padding: 10px;
-  /*padding-bottom: 10px;*/
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.tsc_divider8_black {
+  height: 75px;
+  /*height: 30px;*/
+  width: 330px;
+  margin: 0px auto;
+  background: url(../images/tsc_divider8_black.png) no-repeat scroll center transparent;
+  padding: 6px;
 }
 
 .email-list .item.latest {
-  background-color: #FFF8F5;
+  background-color: #fcfbe5;
   margin-bottom: 20px;
   border: none;
 }
 
 .email-list .item .title {
   margin-bottom: 4px;
+  text-align: center;
 }
 
 .email-list .item .snippet {
   font-size: 18px;
   padding-top: 15px;
+  text-align: justify;
 }
 
 .email-list .item .sender {
