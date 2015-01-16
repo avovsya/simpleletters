@@ -1,13 +1,26 @@
-var gmailLib = require('../lib/gmail');
-var store = require('../lib/store');
+var mail = require('../lib/mail');
+
+var UPDATE_PERIOD = 15 * 60; // Update list at least every 15 minutes
 
 exports.emailListView = function emailListView(req, res) {
-  store.getEmails(req.session.user, function (err, emails) {
+  var renderList = function renderList(err) {
     if (err) {
       return res.send(500, err);
     }
-    res.render('list', { letters: emails });
-  });
+    mail.getEmails(req.session.user, function (err, emails) {
+      if (err) {
+        return res.send(500, err);
+      }
+      res.render('list', { letters: emails });
+    });
+  };
+
+  var timeFromLastUpdate = (new Date() - req.session.user.lastUpdated) / 1000;
+  if (timeFromLastUpdate >= UPDATE_PERIOD) {
+    mail.refreshEmails(req.session.user, req.session.user.lastUpdated, renderList);
+  } else {
+    renderList();
+  }
 };
 
 exports.importAllEmails = function importAllEmails(req, res) {
@@ -18,15 +31,10 @@ exports.importAllEmails = function importAllEmails(req, res) {
   if (req.query.type === 'recent') {
     lastUpdated = req.session.user.lastUpdated;
   }
-  gmailLib.getNewsletters(req.session.user, lastUpdated,  function (err, newsletters) {
+  mail.refreshEmails(req.session.user, lastUpdated, function (err) {
     if (err) {
       return res.send(500, err);
     }
-    store.saveEmails(req.session.user, newsletters, function (err) {
-      if (err) {
-        return res.send(500, err);
-      }
-      return res.redirect('/');
-    });
+    return res.redirect('/');
   });
 };
