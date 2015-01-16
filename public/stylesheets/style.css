@@ -1,12 +1,16 @@
 body {
   padding: 50px;
   /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
-  font: 14px Georgia !important;
+  font: 14px Cardo serif !important;
   color: rgba(0,0,0,0.8);
 }
 
 .container {
   max-width: 960px;
+}
+
+.container.list {
+  max-width: 840px;
 }
 
 a {
@@ -67,10 +71,17 @@ a {
 .email-list .item {
   margin-top: 10px;
   margin-bottom: 10px;
-  padding-bottom: 20px;
+  padding: 10px;
+  /*padding-bottom: 10px;*/
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: rgba(0,0,0,0.2);
+}
+
+.email-list .item.latest {
+  background-color: #FFF8F5;
+  margin-bottom: 20px;
+  border: none;
 }
 
 .email-list .item .title {
@@ -146,11 +157,11 @@ a {
 
 .logo {
   width: 98%;
-  font-family: Georgia;
+  font-family: Cardo;
   font-size: 23px;
   color: #444;
   text-align: center;
-  padding-top: 8px;
+  padding-top: 6px;
 }
 
 .logo.subject {

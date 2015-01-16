@@ -1,3 +1,5 @@
+var _ = require("lodash");
+
 var mail = require('../lib/mail');
 
 var UPDATE_PERIOD = 15 * 60; // Update list at least every 15 minutes
@@ -11,7 +13,8 @@ exports.emailListView = function emailListView(req, res) {
       if (err) {
         return res.send(500, err);
       }
-      res.render('list', { letters: emails });
+      var latestEmail = _.find(emails, { _id: req.session.user.latestEmail });
+      res.render('list', { letters: emails, latestEmail: latestEmail });
     });
   };
 

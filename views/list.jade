@@ -11,8 +11,13 @@ block topPanel
       a(href="/logout").round-button(title="Log out")
         span.glyphicon.glyphicon-log-out
 block content
-  div.container
+  div.container.list
     div.email-list
+      if latestEmail
+        div.item.latest
+          a(href="/mail/#{latestEmail._id}?pos=#{latestEmail._id}latest")
+            h2.title= latestEmail.subject
+            p.snippet= latestEmail.snippet
       each email in letters
         div(class=email.unread ? "unread" : "read", id=email._id).item
           - var anchorId = prevEmail ? prevEmail._id : ""
@@ -20,9 +25,6 @@ block content
             h2.title= email.subject
               if email.seen
                 span.glyphicon.glyphicon-eye-open.seen(title="Mail already seen")
-            //- em.sender= email.from
             p.snippet= email.snippet
             - var prevEmail = email
-  //-    div.row
-  //-      div.col-xs-12
 
