@@ -19,8 +19,7 @@ a {
 
 /* INDEX PAGE */
 .main-page-logo {
-  font-size: 58px;
-
+  font-size: 90px;
 }
 
 .main-logo-container {
@@ -164,10 +163,9 @@ a {
 .logo {
   width: 98%;
   font-family: Cardo;
-  font-size: 23px;
+  font-size: 30px;
   color: #444;
   text-align: center;
-  padding-top: 6px;
 }
 
 .logo.subject {

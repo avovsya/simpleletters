@@ -10,7 +10,7 @@ exports.getMailView = function getMailView(req, res) {
         res.send(500, err);
       }
       res.render('mail', {
-        title: result.subject + ' - ' + 'Simple Letters',
+        title: result.subject + ' - ' + 'The Retl',
         body: result.body,
         subject: result.subject,
         id: req.params.mailId,
