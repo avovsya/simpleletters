@@ -1,4 +1,4 @@
-var gmailLib = require('../lib/gmail');
+var auth = require('../lib/auth');
 var store = require('../lib/store');
 
 exports.googleAuthView = function googleAuthView(req, res) {
@@ -6,12 +6,12 @@ exports.googleAuthView = function googleAuthView(req, res) {
     return res.redirect('/');
   }
   res.render('auth', {
-    authUrl: gmailLib.authUrl
+    authUrl: auth.authUrl
   });
 };
 
 exports.googleAuthCallback = function googleAuthCallback(req, res) {
-  gmailLib.authCallbackHandler(req.query.code, function (err, userData) {
+  auth.googleAuthCallback(req.query.code, function (err, userData) {
     if (err) {
       return res.send(500, err);
     }
