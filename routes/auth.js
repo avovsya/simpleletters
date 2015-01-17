@@ -11,6 +11,9 @@ exports.googleAuthView = function googleAuthView(req, res) {
 };
 
 exports.googleAuthCallback = function googleAuthCallback(req, res, next) {
+  if (req.query.error) {
+    return res.redirect('/');
+  }
   auth.googleAuthCallback(req.query.code, function (err, userData) {
     if (err) {
       return next(err);
