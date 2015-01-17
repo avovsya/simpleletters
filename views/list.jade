@@ -17,6 +17,7 @@ block content
         div.item.latest
           a(href="/mail/#{latestEmail._id}?pos=#{latestEmail._id}latest")
             h2.title= latestEmail.subject
+            p.sender By #{latestEmail.from}
             p.snippet= latestEmail.snippet
       each email in letters
         div(class=email.unread ? "unread" : "read", id=email._id).item
@@ -25,7 +26,7 @@ block content
             h2.title= email.subject
               if email.seen
                 span.glyphicon.glyphicon-eye-open.seen(title="Mail already seen")
+            p.sender By #{email.from}
             p.snippet !{email.snippet}
         div.tsc_divider8_black
             - var prevEmail = email
-
