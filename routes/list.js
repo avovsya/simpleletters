@@ -4,17 +4,22 @@ var mail = require('../lib/mail');
 
 var UPDATE_PERIOD = 15 * 60; // Update list at least every 15 minutes
 
-exports.emailListView = function emailListView(req, res) {
+exports.emailListView = function emailListView(req, res, next) {
   var renderList = function renderList(err) {
     if (err) {
-      return res.send(500, err);
+      return next(err);
     }
     mail.getEmails(req.session.user, function (err, emails) {
       if (err) {
-        return res.send(500, err);
+        return next(err);
       }
-      var latestEmail = _.find(emails, { _id: req.session.user.latestEmail });
-      res.render('list', { letters: emails, latestEmail: latestEmail });
+      var latestEmail = _.find(emails, {
+        _id: req.session.user.latestEmail
+      });
+      res.render('list', {
+        letters: emails,
+        latestEmail: latestEmail
+      });
     });
   };
 
@@ -26,7 +31,7 @@ exports.emailListView = function emailListView(req, res) {
   }
 };
 
-exports.importAllEmails = function importAllEmails(req, res) {
+exports.importAllEmails = function importAllEmails(req, res, next) {
   var lastUpdated;
   if (req.query.type === 'recent') {
     lastUpdated = req.session.user.lastUpdated;
@@ -36,7 +41,7 @@ exports.importAllEmails = function importAllEmails(req, res) {
 
   mail.refreshEmails(req.session.user, lastUpdated, function (err) {
     if (err) {
-      return res.send(500, err);
+      return next(err);
     }
     return res.redirect('/');
   });

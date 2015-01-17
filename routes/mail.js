@@ -1,13 +1,13 @@
 var mail = require('../lib/mail');
 
-exports.getMailView = function getMailView(req, res) {
+exports.getMailView = function getMailView(req, res, next) {
   mail.get(req.params.mailId, function (err, result) {
     if (err) {
-      res.send(500, err);
+      return next(err);
     }
     mail.markAsSeen(req.session.user, req.params.mailId, function (err) {
       if (err) {
-        res.send(500, err);
+        return next(err);
       }
       res.render('mail', {
         title: result.subject + ' - ' + 'The Retl',
@@ -20,10 +20,10 @@ exports.getMailView = function getMailView(req, res) {
   });
 };
 
-exports.markAsRead = function markAsRead(req, res) {
+exports.markAsRead = function markAsRead(req, res, next) {
   mail.markAsRead(req.params.mailId, function (err, result) {
     if (err) {
-      return res.send(500, err);
+      return next(err);
     }
     res.redirect('/list');
   });

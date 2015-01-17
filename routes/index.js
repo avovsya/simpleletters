@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var gmailLib = require('../lib/gmail');
 var authorize = require('../lib/auth').authorize;
+var authUrl = require('../lib/auth').authUrl;
 
 var list = require('./list');
 var auth = require('./auth');
@@ -12,7 +12,7 @@ router.get('/', function(req, res) {
     return res.redirect('/list');
   }
   res.render('index', {
-    authUrl: gmailLib.authUrl
+    authUrl: authUrl
   });
 });
 

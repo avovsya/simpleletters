@@ -10,14 +10,14 @@ exports.googleAuthView = function googleAuthView(req, res) {
   });
 };
 
-exports.googleAuthCallback = function googleAuthCallback(req, res) {
+exports.googleAuthCallback = function googleAuthCallback(req, res, next) {
   auth.googleAuthCallback(req.query.code, function (err, userData) {
     if (err) {
-      return res.send(500, err);
+      return next(err);
     }
     store.findUser(userData.email, function (err, user) {
       if (err) {
-        return res.send(500, err);
+        return next(err);
       }
       if (user) {
         req.session.user = user;
@@ -26,7 +26,7 @@ exports.googleAuthCallback = function googleAuthCallback(req, res) {
         //userData.lastUpdated = new Date().getTime();
         store.createUser(userData, function (err, result) {
           if (err) {
-            return res.send(500, err);
+            return next(err);
           }
           req.session.user = userData;
           res.redirect('/list/import');
