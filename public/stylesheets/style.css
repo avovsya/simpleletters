@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  padding-top: 50px;
   /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
   font: 14px Cardo serif !important;
   color: rgba(0,0,0,0.8);
@@ -86,7 +86,7 @@ a {
 .tsc_divider8_black {
   height: 75px;
   /*height: 30px;*/
-  width: 330px;
+  /* width: 330px; */
   margin: 0px auto;
   background: url(../images/tsc_divider8_black.png) no-repeat scroll center transparent;
   padding: 6px;

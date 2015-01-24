@@ -9,7 +9,7 @@ block topPanel
       div.logo.subject
         span= subject
     div.col-xs-1.button-container-right(title="Mark as read")
-      a(href="/mail/#{id}/markread").round-button
+      a(href="/mail/#{id}/markread", data-no-instant).round-button
         span.glyphicon.glyphicon-ok
 
 block content
