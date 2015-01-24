@@ -2,12 +2,12 @@ extends layout
 
 block topPanel
   div.row
-    div.col-xs-1.button-container-left
+    div.col-xs-1.col-md-1.button-container-left
       a(href="/list/import?type=recent", data-no-instant).round-button(title="Refresh")
         span.glyphicon.glyphicon-refresh
-    div.col-xs-10
+    div.col-xs-9.col-md-10
       div.logo The Retl
-    div.col-xs-1.button-container-right
+    div.col-xs-1.col-md-1.button-container-right
       a(href="/logout", data-no-instant).round-button(title="Log out")
         span.glyphicon.glyphicon-log-out
 block content

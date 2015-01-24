@@ -181,6 +181,19 @@ a {
   text-align: center;
 }
 
+.logo-small {
+  width: 98%;
+  font-family: Cardo;
+  font-size: 15px;
+  color: #444;
+  text-align: center;
+}
+
+.logo-small {
+  white-space: normal !important;
+  max-height: 35px;
+}
+
 .logo.subject {
   overflow: hidden;
   text-overflow: ellipsis;
